@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Size Preview</title>
+  <style>
+    #image-container {
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Size Preview</h1>
+  
+  <h3>width</h3>
+  <input id="width" type="number" placeholder="width (px)" />
+  <h3>height</h3>
+  <input id="height" type="number" placeholder="height (px)" />
+  <br>
+  <button id="preview">Preview</button>
+  <div id="image-container"></div>
+
+  <script>
+    const widthInput = document.getElementById('width');
+    const heightInput = document.getElementById('height');
+    const previewButton = document.getElementById('preview');
+    const imageContainer = document.getElementById('image-container');
+
+    previewButton.addEventListener('click', () => {
+      const width = parseInt(widthInput.value);
+      const height = parseInt(heightInput.value);
+
+      // Set the image container dimensions
+      imageContainer.style.width = `${width}px`;
+      imageContainer.style.height = `${height}px`;
+    });
+  </script>
+</body>
+</html>
